@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<meta name='viewport' content='width=device-width,initial-scale=1' />
+<title>MedTech Mini — Image Phase Simulation</title>
+<link rel='stylesheet' href='styles.css' />
+</head>
+<body>
+  <main class='container'>
+    <h1>MedTech Mini — Image Phase Simulation</h1>
+    <div class='controls'>
+      <input id='fileInput' type='file' accept='image/*' />
+      <label><input type='radio' name='phase' value='arterial' checked /> Arterial</label>
+      <label><input type='radio' name='phase' value='venous' /> Venous</label>
+      <button id='submitBtn'>Process</button>
+    </div>
+    <div class='images'>
+      <figure><figcaption>Original</figcaption><img id='original' alt='original image' /></figure>
+      <figure><figcaption>Processed</figcaption><img id='processed' alt='processed image' /></figure>
+    </div>
+    <div id='status'></div>
+  </main>
+<script src='main.js'></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+body { font-family: Arial, sans-serif; background:#f4f5f7; color:#222; padding:20px; }
+.container { max-width:900px; margin:0 auto; }
+.controls { display:flex; gap:8px; align-items:center; margin-bottom:16px; }
+.images { display:flex; gap:12px; }
+figure { background:white; padding:8px; border-radius:6px; box-shadow:0 1px 4px rgba(0,0,0,0.08); width:50%; text-align:center; }
+figure img { max-width:100%; height:auto; display:block; margin:0 auto; }
+#status { margin-top:12px; }
