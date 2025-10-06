@@ -1,7 +1,7 @@
 # backend/requirements.txt
 # Minimal pinned requirements for running the Flask backend and tests.
 Flask==2.3.2
-Pillow==9.5.0
+Pillow>=10.2.0
 numpy==1.26.0
 opencv-python-headless==4.8.1.78
 pytest==7.4.0
