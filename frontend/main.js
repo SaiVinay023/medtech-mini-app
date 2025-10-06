@@ -1,14 +1,29 @@
+/*
+  frontend/main.js
+  ----------------
+  Lightweight glue between the static UI and the Flask backend. Key notes:
+  - `BACKEND_URL` points to the POST /process endpoint and is set to the
+    local dev server by default: http://localhost:7860/process
+  - The UI uses FormData to send a file + a `phase` field. The backend returns
+    raw PNG bytes which are rendered as an object URL in the processed <img>.
+
+  For deployment, update BACKEND_URL to the production backend URL, and
+  ensure CORS is configured on the server side.
+*/
+
 const fileInput = document.getElementById('fileInput');
 const submitBtn = document.getElementById('submitBtn');
 const originalImg = document.getElementById('original');
 const processedImg = document.getElementById('processed');
 const status = document.getElementById('status');
 
-const BACKEND_URL = "http://localhost:7860/process"; // replace with deployed backend URL
+// Default local dev backend. Change this for deployed environments.
+const BACKEND_URL = "http://localhost:7860/process";
 
 fileInput.addEventListener('change', () => {
   const file = fileInput.files[0];
   if (!file) return;
+  // Show the selected image on the left pane without uploading
   originalImg.src = URL.createObjectURL(file);
 });
 
@@ -28,7 +43,8 @@ submitBtn.addEventListener('click', async () => {
   try {
     const resp = await fetch(BACKEND_URL, { method: 'POST', body: form });
     if (!resp.ok) {
-      const err = await resp.json().catch(()=>({error:resp.statusText}));
+      // Backend returns JSON errors on 4xx; attempt to parse
+      const err = await resp.json().catch(() => ({ error: resp.statusText }));
       status.textContent = "Server error: " + (err.error || resp.statusText);
       return;
     }

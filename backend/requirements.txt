@@ -1,3 +1,5 @@
+# backend/requirements.txt
+# Minimal pinned requirements for running the Flask backend and tests.
 Flask==2.3.2
 Pillow==9.5.0
 numpy==1.26.0

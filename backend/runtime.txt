@@ -1,1 +1,4 @@
-python-3.11
+python-3.10.14
+
+# runtime.txt indicates the Python runtime for some PaaS (e.g., Heroku/Spaces).
+# Keep in sync with your local dev virtualenv (recommended: 3.11.x).
