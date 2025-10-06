@@ -12,3 +12,6 @@ body { font-family: Arial, sans-serif; background:#f4f5f7; color:#222; padding:2
 figure { background:white; padding:8px; border-radius:6px; box-shadow:0 1px 4px rgba(0,0,0,0.08); width:50%; text-align:center; }
 figure img { max-width:100%; height:auto; display:block; margin:0 auto; }
 #status { margin-top:12px; }
+img:not([src]), img[src=""] {
+  display: none;
+}
